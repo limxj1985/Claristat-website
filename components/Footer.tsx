@@ -1,54 +1,80 @@
-
 import React from 'react';
 import Logo from './Logo';
-import { Phone, Mail } from 'lucide-react';
+import { ArrowUp, Linkedin, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="py-24 border-t border-slate-200 bg-white">
+    <footer className="py-20 border-t border-slate-200 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-16">
+        <div className="grid md:grid-cols-4 gap-12 lg:gap-24">
+          
+          {/* Column 1: Branding (Wider) */}
           <div className="col-span-2">
-            <Logo className="h-12 mb-8" />
-            <p className="text-slate-500 max-w-sm leading-relaxed mb-10 font-light text-sm italic">
+            <Logo className="h-10 mb-6" />
+            <p className="text-slate-500 max-w-sm leading-relaxed mb-8 font-light text-sm">
               "Precision research is the bedrock of visionary leadership. We provide the clarity that separates the relevant from the noise."
             </p>
-          </div>
-          
-          <div className="col-span-2">
-            <h6 className="text-slate-900 text-xs font-bold mb-8 uppercase tracking-[0.2em]">Contact Channels</h6>
-            <div className="space-y-6">
-              <a 
-                href="tel:+60123456789" 
-                className="group flex items-center space-x-4 text-slate-500 hover:text-amber-700 transition-all duration-300"
-              >
-                <div className="p-3 rounded-lg bg-slate-50 border border-slate-100 group-hover:border-amber-200 transition-all">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Phone Number</span>
-                  <span className="text-sm font-medium tracking-wider text-slate-700 group-hover:text-slate-900">+60 12-345 6789</span>
-                </div>
+            {/* Social Links Placeholder */}
+            <div className="flex space-x-4">
+              <a href="#" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-colors">
+                <Linkedin className="w-4 h-4" />
               </a>
-
-              <a 
-                href="mailto:contact@claristat.com" 
-                className="group flex items-center space-x-4 text-slate-500 hover:text-blue-600 transition-all duration-300"
-              >
-                <div className="p-3 rounded-lg bg-slate-50 border border-slate-100 group-hover:border-blue-200 transition-all">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Digital Correspondence</span>
-                  <span className="text-sm font-medium tracking-wider text-slate-700 group-hover:text-slate-900">contact@claristat.com</span>
-                </div>
+              <a href="#" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-black hover:border-black transition-colors">
+                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
+          
+          {/* Column 2: Navigation */}
+          <div>
+            <h6 className="text-slate-900 text-xs font-bold mb-6 uppercase tracking-[0.2em]">Explore</h6>
+            <ul className="space-y-4 text-sm font-medium text-slate-500">
+              <li>
+                <button onClick={() => scrollToSection('home')} className="hover:text-amber-600 transition-colors text-left">Home</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('pricing')} className="hover:text-amber-600 transition-colors text-left">Services & Pricing</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('referral')} className="hover:text-amber-600 transition-colors text-left">Referral Program</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('faq')} className="hover:text-amber-600 transition-colors text-left">FAQ</button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Legal & Action */}
+          <div>
+            <h6 className="text-slate-900 text-xs font-bold mb-6 uppercase tracking-[0.2em]">Legal</h6>
+            <ul className="space-y-4 text-sm font-medium text-slate-500 mb-8">
+              <li><a href="#" className="hover:text-amber-600 transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-amber-600 transition-colors">Terms of Service</a></li>
+            </ul>
+            
+            <button 
+              onClick={scrollToTop}
+              className="group flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-600 transition-colors"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3 h-3 group-hover:-translate-y-1 transition-transform" />
+            </button>
+          </div>
+
         </div>
         
-        <div className="mt-24 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-          <p>© 2024 ClariStat Research Consultancy. Precision Redefined.</p>
+        {/* Bottom Copyright */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-slate-400 text-[10px] font-bold uppercase tracking-[0.1em]">
+          <p>© {new Date().getFullYear()} ClariStat Research Consultancy.</p>
+          <p className="mt-2 md:mt-0">Precision. Clarity. Strategy.</p>
         </div>
       </div>
     </footer>
