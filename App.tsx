@@ -37,6 +37,10 @@ const App: React.FC = () => {
           <FAQ />
         </section>
         
+        <section id="contact" className="scroll-mt-24 bg-white">
+          <Contact />
+        </section>
+        
         <section id="disclaimer" className="scroll-mt-24">
           <Disclaimer />
         </section>
