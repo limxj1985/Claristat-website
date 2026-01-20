@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
+import GoogleTranslate from './GoogleTranslate';
 
 const Navbar: React.FC = () => {
   return (
@@ -26,6 +27,9 @@ const Navbar: React.FC = () => {
             Terms
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
           </a>
+          <div className="border-l border-slate-200 pl-6">
+            <GoogleTranslate />
+          </div>
         </div>
 
         {/* 👇 UPDATED: Now links directly to WhatsApp 👇 */}
