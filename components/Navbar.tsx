@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Logo from './Logo';
 
@@ -29,12 +28,15 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        <button 
-          onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+        {/* 👇 UPDATED: Now links directly to WhatsApp 👇 */}
+        <a 
+          href="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20would%20like%20to%20request%20a%20quotation."
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-3 bg-slate-900 text-white rounded-lg text-[10px] font-black uppercase tracking-[0.2em] hover:bg-amber-600 transition-all shadow-lg shadow-slate-200"
         >
           Request Quotation
-        </button>
+        </a>
       </div>
     </nav>
   );
