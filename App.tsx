@@ -6,13 +6,12 @@ import ReferralProgram from './components/ReferralProgram';
 import Disclaimer from './components/Disclaimer';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-// 👇 THIS WAS MISSING
-import Contact from './components/Contact'; 
+import Contact from './components/Contact'; // ✅ You already have this
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen selection:bg-amber-500/20">
-      {/* Background elements - Bright & Cheerful */}
+      {/* Background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden bg-[#f8fafc]">
         <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full bg-amber-100/30 blur-[150px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-blue-100/30 blur-[150px]" />
@@ -38,10 +37,11 @@ const App: React.FC = () => {
           <FAQ />
         </section>
         
-        {/* Now this will work because we imported it! */}
+        {/* 👇 THIS IS THE MISSING PART! 👇 */}
         <section id="contact" className="scroll-mt-24 bg-white">
           <Contact />
         </section>
+        {/* 👆 ADD THIS BLOCK 👆 */}
         
         <section id="disclaimer" className="scroll-mt-24">
           <Disclaimer />
