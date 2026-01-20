@@ -16,24 +16,24 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12 lg:gap-24">
           
-          {/* Column 1: Branding (Wider) */}
+          {/* Column 1: Branding */}
           <div className="col-span-2">
             <Logo className="h-10 mb-6" />
             <p className="text-slate-500 max-w-sm leading-relaxed mb-8 font-light text-sm">
               "Precision research is the bedrock of visionary leadership. We provide the clarity that separates the relevant from the noise."
             </p>
-            {/* Social Links Placeholder */}
+            {/* Social Icons */}
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-black hover:border-black transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="p-2 bg-white border border-slate-200 rounded-full text-slate-400 hover:text-black hover:border-black transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
           
-          {/* Column 2: Navigation */}
+          {/* Column 2: Explore (Navigation) */}
           <div>
             <h6 className="text-slate-900 text-xs font-bold mb-6 uppercase tracking-[0.2em]">Explore</h6>
             <ul className="space-y-4 text-sm font-medium text-slate-500">
@@ -52,12 +52,16 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Legal & Action */}
+          {/* Column 3: Legal (Fixed) */}
           <div>
             <h6 className="text-slate-900 text-xs font-bold mb-6 uppercase tracking-[0.2em]">Legal</h6>
             <ul className="space-y-4 text-sm font-medium text-slate-500 mb-8">
-              <li><a href="#" className="hover:text-amber-600 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-amber-600 transition-colors">Terms of Service</a></li>
+              {/* Privacy Policy removed as requested */}
+              <li>
+                <button onClick={() => scrollToSection('disclaimer')} className="hover:text-amber-600 transition-colors text-left">
+                  Terms of Service
+                </button>
+              </li>
             </ul>
             
             <button 
@@ -71,7 +75,7 @@ const Footer: React.FC = () => {
 
         </div>
         
-        {/* Bottom Copyright */}
+        {/* Copyright */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-slate-400 text-[10px] font-bold uppercase tracking-[0.1em]">
           <p>© {new Date().getFullYear()} ClariStat Research Consultancy.</p>
           <p className="mt-2 md:mt-0">Precision. Clarity. Strategy.</p>
