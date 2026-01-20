@@ -1,0 +1,7 @@
+{
+  "name": "ClariStat Research Consultancy",
+  "description": "A premium research and data analysis consultancy website featuring an AI-powered Market Intelligence engine with real-time Google Search grounding.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
