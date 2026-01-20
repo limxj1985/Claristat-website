@@ -6,7 +6,8 @@ import ReferralProgram from './components/ReferralProgram';
 import Disclaimer from './components/Disclaimer';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import Contact from './components/Contact'; // ✅ You already have this
+import Contact from './components/Contact'; 
+import AdditionalServices from './components/AdditionalServices';
 
 const App: React.FC = () => {
   return (
@@ -28,7 +29,11 @@ const App: React.FC = () => {
         <section id="pricing" className="scroll-mt-24">
           <Pricing />
         </section>
-        
+
+        <section id="services">
+          <AdditionalServices />
+        </section>
+
         <section id="referral" className="scroll-mt-24">
           <ReferralProgram />
         </section>
