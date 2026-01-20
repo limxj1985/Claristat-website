@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, Clock, Users, Zap, MessageSquare, FileText, BarChart, Database, ListChecks } from 'lucide-react';
+import { Check, Clock, Users, Zap, MessageSquare } from 'lucide-react';
 
 interface Feature {
   label: string;
@@ -20,10 +19,11 @@ interface PackageProps {
   buttonText?: string;
   priceDetail?: string;
   urgentText?: string;
+  whatsappLink: string; // Added this prop for the link
 }
 
 const PricingCard: React.FC<PackageProps> = ({ 
-  name, price, description, subtitle, metrics, features, footerNote, isPremium, buttonText = "Select Package", priceDetail, urgentText
+  name, price, description, subtitle, metrics, features, footerNote, isPremium, buttonText = "Select Package", priceDetail, urgentText, whatsappLink
 }) => (
   <div className={`relative flex flex-col p-8 rounded-3xl transition-all duration-500 border h-full ${isPremium ? 'bg-white border-amber-500/40 shadow-2xl shadow-slate-200 scale-[1.05] z-10' : 'bg-white/50 border-slate-200 hover:border-slate-300'}`}>
     {isPremium && (
@@ -95,9 +95,15 @@ const PricingCard: React.FC<PackageProps> = ({
       </p>
     )}
 
-    <button className={`mt-8 w-full py-4 rounded-xl font-bold text-[10px] uppercase tracking-[0.2em] transition-all ${isPremium ? 'bg-amber-600 text-white hover:bg-amber-700 shadow-lg shadow-amber-200/50' : 'bg-slate-900 text-white hover:bg-slate-800'}`}>
+    {/* 👇 UPDATED: Uses an Anchor tag now instead of button */}
+    <a 
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`mt-8 w-full block text-center py-4 rounded-xl font-bold text-[10px] uppercase tracking-[0.2em] transition-all ${isPremium ? 'bg-amber-600 text-white hover:bg-amber-700 shadow-lg shadow-amber-200/50' : 'bg-slate-900 text-white hover:bg-slate-800'}`}
+    >
       {buttonText}
-    </button>
+    </a>
   </div>
 );
 
@@ -134,6 +140,7 @@ const Pricing: React.FC = () => {
               subtitle="Initial Scoping"
               description="Research Strategy"
               price="RM100.00"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20Discovery%20(Phase%2001)%20package."
               metrics={[
                 { label: "Live Session", value: "60 Min", icon: <MessageSquare className="w-4 h-4" /> }
               ]}
@@ -151,6 +158,7 @@ const Pricing: React.FC = () => {
               subtitle="The Blueprint"
               description="Methodological Architecture"
               price="RM400.00"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20Standard%20(Phase%2001)%20package."
               isPremium={true}
               metrics={[
                 { label: "Live Session", value: "60 Min", icon: <MessageSquare className="w-4 h-4" /> }
@@ -168,6 +176,7 @@ const Pricing: React.FC = () => {
               subtitle="The Protocol"
               description="Full Execution Strategy"
               price="RM800.00"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20Premium%20(Phase%2001)%20package."
               metrics={[
                 { label: "Live Session", value: "60 Min", icon: <MessageSquare className="w-4 h-4" /> }
               ]}
@@ -196,6 +205,7 @@ const Pricing: React.FC = () => {
               subtitle="Descriptive analysis"
               description="Fundamental Statistical Processing"
               price="RM300"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20BASIC%20(Phase%2002)%20package."
               metrics={[
                 { label: "Statistical Models / Tests", value: "1", icon: <Zap className="w-4 h-4" /> },
                 { label: "Respondents (MAX)", value: "300", icon: <Users className="w-4 h-4" /> },
@@ -221,6 +231,7 @@ const Pricing: React.FC = () => {
               subtitle="Basic Inferential Statistics"
               description="Comprehensive Hypothesis Testing"
               price="RM800"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20STANDARD%20(Phase%2002)%20package."
               isPremium={true}
               metrics={[
                 { label: "Statistical Models / Tests", value: "5", icon: <Zap className="w-4 h-4" /> },
@@ -247,6 +258,7 @@ const Pricing: React.FC = () => {
               subtitle="Advanced analysis"
               description="Elite Research Engine"
               price="RM1,300"
+              whatsappLink="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20the%20PREMIUM%20(Phase%2002)%20package."
               metrics={[
                 { label: "Statistical Models / Tests", value: "*8", icon: <Zap className="w-4 h-4" /> },
                 { label: "Respondents (MAX)", value: "600", icon: <Users className="w-4 h-4" /> },
@@ -277,13 +289,13 @@ const Pricing: React.FC = () => {
               For complex datasets, multi-national survey projects, or high-impact corporate research, we offer custom-engineered statistical frameworks.
             </p>
             <a 
-  href="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20initiating%20a%20Custom%20Protocol."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full block text-center py-4 bg-slate-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-amber-600 transition-colors shadow-lg shadow-slate-900/20"
->
-  INITIATE CUSTOM PROTOCOL
-</a>
+              href="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20initiating%20a%20Custom%20Protocol."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block text-center py-4 bg-slate-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-amber-600 transition-colors shadow-lg shadow-slate-900/20"
+            >
+              INITIATE CUSTOM PROTOCOL
+            </a>
           </div>
         </div>
       </div>
