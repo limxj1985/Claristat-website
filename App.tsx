@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -7,6 +6,8 @@ import ReferralProgram from './components/ReferralProgram';
 import Disclaimer from './components/Disclaimer';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+// 👇 THIS WAS MISSING
+import Contact from './components/Contact'; 
 
 const App: React.FC = () => {
   return (
@@ -37,6 +38,7 @@ const App: React.FC = () => {
           <FAQ />
         </section>
         
+        {/* Now this will work because we imported it! */}
         <section id="contact" className="scroll-mt-24 bg-white">
           <Contact />
         </section>
