@@ -1,24 +1,12 @@
-
-import React, { useEffect, useState } from 'react';
-import { generateHeroVisual } from '../services/images';
-import { Loader2, ArrowRight, Shield } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Shield } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      const url = await generateHeroVisual();
-      setImageUrl(url);
-      setLoading(false);
-    };
-    fetchImage();
-  }, []);
-
   return (
     <header className="relative pt-48 pb-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Left Side: Text Content */}
         <div className="max-w-2xl">
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
             <Shield className="w-3 h-3" aria-hidden="true" />
@@ -46,25 +34,19 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
+        {/* Right Side: Image (Option B) */}
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative w-full aspect-square max-w-[550px] bg-white rounded-[3rem] p-4 border border-slate-200 overflow-hidden float-animation shadow-2xl shadow-slate-200">
-            {loading ? (
-              <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
-                <Loader2 className="w-10 h-10 text-amber-500 animate-spin" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Rendering Data Visual</span>
-              </div>
-            ) : imageUrl ? (
-              <img 
-                src={imageUrl} 
-                alt="Professional statistical data visualization reflecting clarity in academic and business research" 
-                className="w-full h-full object-cover rounded-[2.5rem] opacity-95 transition-opacity"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-slate-100 to-amber-50 rounded-[2.5rem]" />
-            )}
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+              alt="Data Analysis Dashboard and Statistical Insights" 
+              className="w-full h-full object-cover rounded-[2.5rem]"
+            />
           </div>
+          {/* Background Glow Effect */}
           <div className="absolute -z-10 -bottom-10 -right-10 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full" />
         </div>
+
       </div>
     </header>
   );
