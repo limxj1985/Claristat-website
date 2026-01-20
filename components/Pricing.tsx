@@ -276,9 +276,14 @@ const Pricing: React.FC = () => {
             <p className="text-slate-500 text-sm font-medium mb-10 leading-relaxed uppercase tracking-[0.15em]">
               For complex datasets, multi-national survey projects, or high-impact corporate research, we offer custom-engineered statistical frameworks.
             </p>
-            <button className="px-16 py-6 bg-slate-900 text-white rounded-xl font-black text-[11px] uppercase tracking-[0.4em] hover:bg-blue-700 transition-all">
-              Initiate Custom Protocol
-            </button>
+            <a 
+  href="https://wa.me/60103319228?text=Hi%20ClariStat,%20I%20am%20interested%20in%20initiating%20a%20Custom%20Protocol."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full block text-center py-4 bg-slate-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-amber-600 transition-colors shadow-lg shadow-slate-900/20"
+>
+  INITIATE CUSTOM PROTOCOL
+</a>
           </div>
         </div>
       </div>
